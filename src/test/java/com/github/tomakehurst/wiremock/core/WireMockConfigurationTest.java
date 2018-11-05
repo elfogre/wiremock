@@ -22,6 +22,8 @@ import org.junit.Test;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
+import java.net.MalformedURLException;
+
 public class WireMockConfigurationTest {
 
     @Test
@@ -49,5 +51,11 @@ public class WireMockConfigurationTest {
         QueuedThreadPool threadPool = (QueuedThreadPool) wireMockConfiguration.threadPoolFactory().buildThreadPool(wireMockConfiguration);
 
         assertThat(threadPool.getMaxThreads(), is(maxThreads));
+    }
+    
+    @Test
+    public void testReloadFileExtensions() throws MalformedURLException {
+    	WireMockConfiguration wireMockConfiguration = WireMockConfiguration.wireMockConfig().usingFilesUnderDirectory("src/test/resources");
+    	wireMockConfiguration.reloadFileExtensions();
     }
 }

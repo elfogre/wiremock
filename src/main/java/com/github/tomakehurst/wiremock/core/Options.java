@@ -31,6 +31,7 @@ import com.github.tomakehurst.wiremock.standalone.MappingsLoader;
 import com.github.tomakehurst.wiremock.verification.notmatched.NotMatchedRenderer;
 import com.google.common.base.Optional;
 
+import java.net.MalformedURLException;
 import java.util.List;
 import java.util.Map;
 
@@ -65,4 +66,5 @@ public interface Options {
     boolean getHttpsRequiredForAdminApi();
     NotMatchedRenderer getNotMatchedRenderer();
     AsynchronousResponseSettings getAsynchronousResponseSettings();
+	void reloadFileExtensions() throws MalformedURLException;
 }

@@ -51,6 +51,7 @@ dependencies {
     compile "org.eclipse.jetty:jetty-servlets:$versions.jetty"
     compile "org.eclipse.jetty:jetty-webapp:$versions.jetty"
     compile "com.google.guava:guava:20.0"
+    compile group: 'org.reflections', name: 'reflections', version: '0.9.11'
     compile "com.fasterxml.jackson.core:jackson-core:$versions.jackson",
         "com.fasterxml.jackson.core:jackson-annotations:$versions.jackson",
         "com.fasterxml.jackson.core:jackson-databind:$versions.jacksonDatabind"
